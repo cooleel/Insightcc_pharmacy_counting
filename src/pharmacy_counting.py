@@ -14,7 +14,9 @@ import sys
 def get_data(file):
     #read in txt file line by line,separate header and the body text
     with open(file,'r') as f_input:
-        header = next(f_input)
+        next(f_input)
+       # header = next(f_input)
+       #0: id, 1: last name, 2: first name, 3: drug name, 4: cost
         return list(f_input)
 
 def process_count(data):
@@ -52,8 +54,10 @@ def write_output(file_output,result,output_header):
         f_output.write(result)
     
 def main():
-    input_file = sys.argv[1]
-    output_file = sys.argv[2]
+    #input_file = sys.argv[1]
+    #output_file = sys.argv[2]
+    input_file = 'itcont.txt'
+    output_file = 'top_cost_drug.txt'
     output_header = 'drug_name,num_prescriber,total_cost\n'
     
     data = get_data(input_file)
