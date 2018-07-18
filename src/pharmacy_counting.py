@@ -33,7 +33,7 @@ def process_count(data):
             #get new prescriber name
             total_cost = drug_cost
             #single entry of a new drug_name
-            count_dic[drug_name] = [unique_prescriber, total_cost]
+            count_dic[drug_name] = [unique_prescriber, round(total_cost)]
         else:
             #update existing drug in dictionary
             exist_drug = count_dic[drug_name]
@@ -51,7 +51,7 @@ def process_data(result):
         drug_info = result[drug]  #get prescriber and cost value
         num_prescriber = len(drug_info[0])
         total_cost = drug_info[1]
-        lists.append((drug, num_prescriber, round(total_cost)))
+        lists.append((drug, num_prescriber, int(total_cost)))
 
     #sort output first by cost then by drug name
     lists.sort(key = lambda x:(-x[2],x[0]))
