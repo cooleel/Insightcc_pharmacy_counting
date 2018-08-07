@@ -7,7 +7,7 @@ My solution for Insight Data Engineering code challenge
 
 
 #solution in sql
-SELECT drug_name, count(distinct prescriber_last_name,presriber_first_name) as num_prescriber, sum(drug_cost) as total_cost
-FROM input_table
-GROUP BY drug_name
+SELECT drug_name, count(distinct prescriber_last_name,presriber_first_name) as num_prescriber, sum(drug_cost) as total_cost  
+FROM input_table  
+GROUP BY drug_name  
 ORDER BY total_cost DESC,drug_name;
